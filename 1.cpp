@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <vector>
 #include <sstream>
 
 struct Student
@@ -18,17 +17,17 @@ void recordStudent(const Student &student)
     fout.close();
 }
 
-void printStudent()
+void printStudents()
 {   
     std::ifstream fin("students.txt");
     Student student;
     std::cout <<"Student list" << std::endl;
-
+    std::cout <<"Name\tAge\tGrade" << std::endl;
     while (fin >> student.name >> student.age >> student.grade)
     {
         std::cout << student.name << "\t" << student.age << "\t" << student.grade << std::endl;
     }
-    
+
     fin.close();
 }
 
@@ -49,7 +48,7 @@ void parseCommand(const std::string &commandLine)
     }
     else if (command == "student-list")
     {
-        printStudent();
+        printStudents();
     }
     else if (!command.empty() && command != "exit")
     {
