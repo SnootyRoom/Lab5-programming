@@ -1,0 +1,8 @@
+================================================================================
+Linker Errors
+Generated: 2026-04-28T15:25:54.193Z
+Total Errors: 1
+================================================================================
+
+[LNK1168] (MSVC)
+не удается открыть C:\Visual Studio Code\Lab5-programming\build\Debug\Task3.exe для записи [C:\Visual Studio Code\Lab5-programming\build\Task3.vcxproj]

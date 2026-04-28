@@ -182,6 +182,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{A4B8521B-593A-3E1D-B212-B7C433B1E51B}</Project>
       <Name>Task2</Name>
     </ProjectReference>
+    <ProjectReference Include="C:\Visual Studio Code\Lab5-programming\build\Task3.vcxproj">
+      <Project>{F1869D46-73C2-34CB-856C-BBDFCC727AE1}</Project>
+      <Name>Task3</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
