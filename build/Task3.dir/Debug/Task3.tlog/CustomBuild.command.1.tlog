@@ -1,0 +1,10 @@
+^C:\VISUAL STUDIO CODE\LAB5-PROGRAMMING\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\18\Insiders\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SC:/Visual Studio Code/Lab5-programming" "-BC:/Visual Studio Code/Lab5-programming/build" --check-stamp-file "C:/Visual Studio Code/Lab5-programming/build/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
