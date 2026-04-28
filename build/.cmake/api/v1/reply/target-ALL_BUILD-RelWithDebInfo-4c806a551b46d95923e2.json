@@ -22,6 +22,9 @@
 	"dependencies" : 
 	[
 		{
+			"id" : "Task2::@6890427a1f51a3e7e1df"
+		},
+		{
 			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		},
 		{
@@ -33,6 +36,9 @@
 	"name" : "ALL_BUILD",
 	"orderDependencies" : 
 	[
+		{
+			"id" : "Task2::@6890427a1f51a3e7e1df"
+		},
 		{
 			"id" : "Task1::@6890427a1f51a3e7e1df"
 		}
