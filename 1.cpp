@@ -11,18 +11,18 @@ struct Student
 };
 
 void recordStudent(const Student &student)
-{   
+{
     std::ofstream fout("students.txt", std::ios::app);
     fout << student.name << "\t" << student.age << "\t" << student.grade << std::endl;
     fout.close();
 }
 
 void printStudents()
-{   
+{
     std::ifstream fin("students.txt");
     Student student;
-    std::cout <<"Student list" << std::endl;
-    std::cout <<"Name\tAge\tGrade" << std::endl;
+    std::cout << "Student list" << std::endl;
+    std::cout << "Name\tAge\tGrade" << std::endl;
     while (fin >> student.name >> student.age >> student.grade)
     {
         std::cout << student.name << "\t" << student.age << "\t" << student.grade << std::endl;
@@ -44,7 +44,6 @@ void parseCommand(const std::string &commandLine)
             recordStudent(student);
         else
             std::cout << "Error: wrong format." << std::endl;
-        
     }
     else if (command == "student-list")
     {
@@ -55,7 +54,6 @@ void parseCommand(const std::string &commandLine)
         std::cout << "Unknow command!" << std::endl;
     }
 }
-
 
 int main(int, char **)
 {
@@ -68,7 +66,7 @@ int main(int, char **)
 
     while (commandLine != "exit")
     {
-        std::cout <<"Input command: "<<std::endl;
+        std::cout << "Input command: " << std::endl;
         std::getline(std::cin, commandLine);
         parseCommand(commandLine);
     }

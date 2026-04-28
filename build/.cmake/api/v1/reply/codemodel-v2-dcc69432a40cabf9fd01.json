@@ -19,7 +19,8 @@
 						0,
 						1,
 						2,
-						3
+						3,
+						4
 					]
 				}
 			],
@@ -37,7 +38,8 @@
 						0,
 						1,
 						2,
-						3
+						3,
+						4
 					]
 				}
 			],
@@ -46,7 +48,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ALL_BUILD-Debug-4c806a551b46d95923e2.json",
+					"jsonFile" : "target-ALL_BUILD-Debug-24f92c50d4f1dac7c257.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 0
 				},
@@ -62,6 +64,13 @@
 					"id" : "Task2::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-Task2-Debug-5ad31e8e984a33921c05.json",
 					"name" : "Task2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Task3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Task3-Debug-4964820461b9bad2ede3.json",
+					"name" : "Task3",
 					"projectIndex" : 0
 				},
 				{
@@ -91,7 +100,8 @@
 						0,
 						1,
 						2,
-						3
+						3,
+						4
 					]
 				}
 			],
@@ -109,7 +119,8 @@
 						0,
 						1,
 						2,
-						3
+						3,
+						4
 					]
 				}
 			],
@@ -118,7 +129,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ALL_BUILD-Release-4c806a551b46d95923e2.json",
+					"jsonFile" : "target-ALL_BUILD-Release-24f92c50d4f1dac7c257.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 0
 				},
@@ -134,6 +145,13 @@
 					"id" : "Task2::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-Task2-Release-9de9b0ec7ae20741e7d2.json",
 					"name" : "Task2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Task3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Task3-Release-30d6dcb19b8c327f1ed5.json",
+					"name" : "Task3",
 					"projectIndex" : 0
 				},
 				{
@@ -163,7 +181,8 @@
 						0,
 						1,
 						2,
-						3
+						3,
+						4
 					]
 				}
 			],
@@ -181,7 +200,8 @@
 						0,
 						1,
 						2,
-						3
+						3,
+						4
 					]
 				}
 			],
@@ -190,7 +210,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ALL_BUILD-MinSizeRel-4c806a551b46d95923e2.json",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-24f92c50d4f1dac7c257.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 0
 				},
@@ -206,6 +226,13 @@
 					"id" : "Task2::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-Task2-MinSizeRel-7ca7d5d378549e7ca8bb.json",
 					"name" : "Task2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Task3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Task3-MinSizeRel-8a34b5af6b12b1489f7c.json",
+					"name" : "Task3",
 					"projectIndex" : 0
 				},
 				{
@@ -235,7 +262,8 @@
 						0,
 						1,
 						2,
-						3
+						3,
+						4
 					]
 				}
 			],
@@ -253,7 +281,8 @@
 						0,
 						1,
 						2,
-						3
+						3,
+						4
 					]
 				}
 			],
@@ -262,7 +291,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-4c806a551b46d95923e2.json",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-24f92c50d4f1dac7c257.json",
 					"name" : "ALL_BUILD",
 					"projectIndex" : 0
 				},
@@ -278,6 +307,13 @@
 					"id" : "Task2::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-Task2-RelWithDebInfo-209f8fdb1f9645976e05.json",
 					"name" : "Task2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Task3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Task3-RelWithDebInfo-fb65cc1e53e1bf145aff.json",
+					"name" : "Task3",
 					"projectIndex" : 0
 				},
 				{

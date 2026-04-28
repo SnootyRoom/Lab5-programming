@@ -76,7 +76,8 @@ bool checkDateFormat(std::string date)
 {
     unsigned int yearCount = 0, monthCount = 0, dayCount = 0;
 
-    if (date.length() != 10) return false;
+    if (date.length() != 10)
+        return false;
 
     for (unsigned int i = 0; i < 4; i++)
         if (std::isdigit(date[i]))
@@ -110,7 +111,7 @@ void parseCommand(const std::string &commandLine)
             else
                 std::cout << "Error: wrong format." << std::endl;
         else
-            std::cout<<"Error: wrong agruments"<<std::endl;
+            std::cout << "Error: wrong agruments" << std::endl;
     }
     else if (command == "sales-summary")
     {
@@ -139,7 +140,6 @@ int main(int, char **)
         parseCommand(commandLine);
     }
 
-    // for(const Sale item: loadSales()) std::cout<<item.buyer<<" - "<<item.category<<" - "<<item.date<<" - "<<item.summary<<std::endl;
 
     return 0;
 }
