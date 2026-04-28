@@ -1,0 +1,3 @@
+C:/Visual Studio Code/Lab5-programming/build/CMakeFiles/Task1.dir
+C:/Visual Studio Code/Lab5-programming/build/CMakeFiles/ALL_BUILD.dir
+C:/Visual Studio Code/Lab5-programming/build/CMakeFiles/ZERO_CHECK.dir
