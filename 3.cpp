@@ -18,8 +18,15 @@ std::vector<Sale> loadSales()
 {
     std::vector<Sale> sales;
     Sale sale;
-    std::ifstream fin("sales.csv");
     std::string line;
+
+    std::ifstream fin("sales.csv");
+    if (!fin.is_open())
+    {
+        std::cout << "File not found!" << std::endl;
+        return {};
+    }
+    
 
     while (std::getline(fin, line))
     {
@@ -39,9 +46,14 @@ std::vector<Sale> loadSales()
     return sales;
 }
 
-void saveSales(const std::vector<Sale> &sales)
+void saveSales(const std::vector<Sale> &sales, const std::string &fileName)
 {
-    std::ofstream fout("filtered_sales.csv");
+    std::ofstream fout(fileName);
+    if (!fout.is_open())
+    {
+        std::cout << "File not found!" << std::endl;
+        return ;
+    }
 
     for (const Sale &item : sales)
         fout << item.date << "," << item.buyer << "," << item.summary << "," << item.category << std::endl;
@@ -72,7 +84,7 @@ std::vector<Sale> filterSalaryByDate(const std::vector<Sale> &sales, const std::
     return filteredSales;
 }
 
-bool checkDateFormat(std::string date)
+bool checkDateFormat(const std::string &date)
 {
     unsigned int yearCount = 0, monthCount = 0, dayCount = 0;
 
@@ -107,7 +119,7 @@ void parseCommand(const std::string &commandLine)
 
         if (ss >> startDate >> endDate)
             if (checkDateFormat(startDate) && checkDateFormat(endDate))
-                saveSales(filterSalaryByDate(sales, startDate, endDate));
+                saveSales(filterSalaryByDate(sales, startDate, endDate), "filtered_sales.csv");
             else
                 std::cout << "Error: wrong format." << std::endl;
         else

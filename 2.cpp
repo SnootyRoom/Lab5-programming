@@ -4,6 +4,7 @@
 #include <vector>
 #include <sstream>
 #include <algorithm>
+#include <cstring>
 #include <iomanip>
 
 struct Product
@@ -17,6 +18,12 @@ struct Product
 void recordProduct(const Product &product)
 {
     std::ofstream fout("products.bin", std::ios::binary | std::ios::app);
+    if (!fout.is_open())
+    {
+        std::cout << "File not found!" << std::endl;
+        return ;
+    }
+
     fout.write((char *)&product, sizeof(product));
     fout.close();
 }
@@ -25,6 +32,12 @@ std::vector<Product> getProducts()
 {
     std::vector<Product> products;
     std::ifstream fin("products.bin", std::ios::binary);
+    if (!fin.is_open())
+    {
+        std::cout << "File not found!" << std::endl;
+        return {};
+    }
+
     Product product;
 
     while (fin.read((char *)&product, sizeof(product)))
@@ -37,7 +50,7 @@ std::vector<Product> getProducts()
 
 Product searchProduct(const std::vector<Product> &products, unsigned int target)
 {
-    auto it = std::find_if(products.begin(), products.end(), [&](const Product &products)
+    auto it = std::find_if(products.begin(), products.end(), [target](const Product &products)
                            { return products.code == target; });
 
     if (it != products.end())
@@ -58,35 +71,37 @@ double summaryProducts(const std::vector<Product> &products)
     return summary;
 }
 
-void printProducts(const std::vector<Product> &products)
-{
-    std::cout << "Product list" << std::endl;
 
+void printTableHeader()
+{
     std::cout << std::left
               << std::setw(10) << "Code"
-              << std::setw(25) << "Title"
+              << std::setw(50) << "Title"
               << std::setw(12) << "Price"
               << std::setw(10) << "Quantity"
               << std::endl;
-
-    for (const Product &item : products)
-    {
-        std::cout << std::left
-                  << std::setw(10) << item.code
-                  << std::setw(25) << item.title
-                  << std::setw(12) << item.price
-                  << std::setw(10) << item.quantity
-                  << std::endl;
-    }
 }
 
 void printProduct(const Product &product)
 {
-    std::cout << "Info about product" << std::endl;
-    std::cout << "Code: " << product.code << std::endl;
-    std::cout << "Title: " << product.title << std::endl;
-    std::cout << "Price: " << product.price << std::endl;
-    std::cout << "Quantity: " << product.quantity << std::endl;
+
+    std::cout << std::left
+              << std::setw(10) << product.code
+              << std::setw(50) << product.title
+              << std::setw(12) << product.price
+              << std::setw(10) << product.quantity
+              << std::endl;
+}
+
+void printProducts(const std::vector<Product> &products)
+{
+    std::cout << "Product list" << std::endl;
+    printTableHeader();
+
+    for (const Product &item : products)
+    {
+        printProduct(item);
+    }
 }
 
 void parseCommand(const std::string &commandLine)
@@ -100,8 +115,12 @@ void parseCommand(const std::string &commandLine)
     if (command == "product")
     {
         Product product;
-        if (ss >> product.code >> product.title >> product.price >> product.quantity)
+        std::string tempTitle = "";
+        if (ss >> product.code >> tempTitle >> product.price >> product.quantity)
+        {
+            std::strncpy(product.title, tempTitle.c_str(), sizeof(product.title));
             recordProduct(product);
+        }
         else
             std::cout << "Error: wrong format." << std::endl;
     }
@@ -112,7 +131,10 @@ void parseCommand(const std::string &commandLine)
     else if (command == "search")
     {
         if (ss >> code)
+        {
+            printTableHeader();
             printProduct(searchProduct(products, code));
+        }
         else
             std::cout << "Error: wrong format." << std::endl;
     }
@@ -131,8 +153,9 @@ int main(int, char **)
     std::string commandLine = "";
 
     std::cout << "Commands:" << std::endl;
+    std::cout << "!!! Input title less then 50 symbols !!!" << std::endl;
     std::cout << "1. product <code> <title> <price> <quantity>" << std::endl;
-    std::cout << "2. product-list" << std::endl;
+    std::cout << "2. product-list" << std::endl;b
     std::cout << "3. search <id>" << std::endl;
     std::cout << "4. product-summary" << std::endl;
     std::cout << "5. exit" << std::endl;

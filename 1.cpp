@@ -13,6 +13,12 @@ struct Student
 void recordStudent(const Student &student)
 {
     std::ofstream fout("students.txt", std::ios::app);
+    if (!fout.is_open())
+    {
+        std::cout << "File not found!" << std::endl;
+        return ;
+    }
+        
     fout << student.name << "\t" << student.age << "\t" << student.grade << std::endl;
     fout.close();
 }
@@ -20,6 +26,12 @@ void recordStudent(const Student &student)
 void printStudents()
 {
     std::ifstream fin("students.txt");
+    if (!fin.is_open())
+    {
+        std::cout << "File not found!" << std::endl;
+        return ;
+    }
+
     Student student;
     std::cout << "Student list" << std::endl;
     std::cout << "Name\tAge\tGrade" << std::endl;
